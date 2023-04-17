@@ -16,16 +16,12 @@ const client = new Discord.Client({
 });
 
 setTimeout(() => {
-  const version = Number(process.version.split('.')[0].replace('v', ''));
-  if (version < 16) return console.log('\n\nPlease upgrade to Node v16 or higher\nPlease upgrade to Node v16 or higher\nPlease upgrade to Node v16 or higher\n\n');
+    const version = Number(process.version.split('.')[0].replace('v', ''));
+    if (version < 16) return console.log('\n\nPlease upgrade to Node v16 or higher\nPlease upgrade to Node v16 or higher\nPlease upgrade to Node v16 or higher\n\n');
 }, 8000);
 
 client.once("ready", () => {
   console.log(chalk.greenBright("[READY]"), `Logged in as ${client.user.tag} (${client.user.id}) at ${moment().format("DD MMMM YYYY, hh:mm:ss")}`);
-  setTimeout(() => {
-    console.log("Stopping process with the code \"0\"...");
-    process.exit(0);
-}, 60000);
 });
 
 client.on("messageCreate", message => {
@@ -78,5 +74,5 @@ client.on("messageCreate", message => {
 client.login(BOT_TOKEN);
 
 process.on('unhandledRejection', (err) => { 
-  console.log(`\nFATAL ERROR: \n\n`, err.stack)
+    console.log(`\nFATAL ERROR: \n\n`, err.stack)
 });
