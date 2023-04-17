@@ -60,7 +60,7 @@ client.on("messageCreate", message => {
       return;
     }
     if (message.member.roles.cache.has(messageRole.id)) return;
-    message.react("✅");
+    message.react("<a:__:938702984655806524>");
     message.member.roles.add(messageRole)
       .then(() => setTimeout(() => message.delete() ,SUCCESS_MESSAGE_TIMEOUT))
       .catch(error => {
