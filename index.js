@@ -9,15 +9,6 @@ const moment = require("moment");
 const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE, VERIFICATION_MESSAGE } = process.env;
 const ERROR_MESSAGE_TIMEOUT = parseInt(process.env.ERROR_MESSAGE_TIMEOUT);
 const SUCCESS_MESSAGE_TIMEOUT = parseInt(process.env.SUCCESS_MESSAGE_TIMEOUT);
-const express = require('express')
-const app = express();
-const port = 3000;
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
 
 
 const client = new Discord.Client({
