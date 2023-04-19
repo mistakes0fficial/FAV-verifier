@@ -6,14 +6,15 @@ const Discord = require("discord.js");
 const chalk = require("chalk");
 const moment = require("moment");
 const express = require('express');
+const express = require('express')
 
+const app = express()
 
-const app = express();
-const port = 3000;
-// create main route
-app.get('/', (req, res) => res.send('Hello World!'));
-// instantiate server
-app.listen(port, () => console.log(`App is listening at http://localhost:${port}`));
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+
+app.listen(3000)
 
 
 
